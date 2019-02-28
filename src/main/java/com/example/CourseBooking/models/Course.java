@@ -1,20 +1,31 @@
 package com.example.CourseBooking.models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "courses")
 public class Course {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "town")
     private String town;
+
+    @Column(name = "rating")
     private int rating;
-    private List<Booking> bookings;
+    // private List<Booking> bookings;
 
     public Course(String name, String town, int rating) {
         this.name = name;
         this.town = town;
         this.rating = rating;
-        bookings = new ArrayList<>();
+      //  bookings = new ArrayList<>();
     }
 
     public Course() {
@@ -52,11 +63,11 @@ public class Course {
         this.rating = rating;
     }
 
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
+//    public List<Booking> getBookings() {
+//        return bookings;
+//    }
+//
+//    public void setBookings(List<Booking> bookings) {
+//        this.bookings = bookings;
+//    }
 }

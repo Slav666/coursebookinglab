@@ -1,6 +1,8 @@
 package com.example.CourseBooking;
 
+import com.example.CourseBooking.models.Course;
 import com.example.CourseBooking.models.Customer;
+import com.example.CourseBooking.repositories.customerRepositories.CourseRepository;
 import com.example.CourseBooking.repositories.customerRepositories.CustomerRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +17,9 @@ public class CourseBookingApplicationTests {
 	@Autowired
 	CustomerRepository customerRepository;
 
+	@Autowired
+    CourseRepository courseRepository;
+
 	@Test
 	public void contextLoads() {
 	}
@@ -25,4 +30,10 @@ public class CourseBookingApplicationTests {
 	    customerRepository.save(customer);
     }
 
+    @Test
+    public void canSaveACourse(){
+	    Course course = new Course("Java", "Glasgow", 4);
+	    courseRepository.save(course);
+
+    }
 }
