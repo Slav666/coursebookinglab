@@ -1,7 +1,7 @@
 package com.example.CourseBooking.controllers;
 
 import com.example.CourseBooking.models.Course;
-import com.example.CourseBooking.repositories.customerRepositories.CourseRepository;
+import com.example.CourseBooking.repositories.courseRepositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
