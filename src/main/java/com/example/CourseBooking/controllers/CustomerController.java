@@ -17,8 +17,9 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping(value = "course/{course_id}")
-    public List<Customer> getCustomersByCourse(@PathVariable Long course_id){
-        return customerRepository.getCustomersByCourseId(course_id);
+    @GetMapping(value = "/course/{course_id}")
+    public List<Customer> customersForAGivenCourse(@PathVariable Long course_id){
+        return customerRepository.customersForAGivenCourse(course_id);
     }
+
 }

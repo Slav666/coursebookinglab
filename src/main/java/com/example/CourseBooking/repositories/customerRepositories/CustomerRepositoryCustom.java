@@ -5,5 +5,5 @@ import com.example.CourseBooking.models.Customer;
 import java.util.List;
 
 public interface CustomerRepositoryCustom {
-    List<Customer> getCustomersByCourseId(Long course_id);
+    List<Customer> customersForAGivenCourse(Long course_id);
 }
