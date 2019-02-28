@@ -23,15 +23,14 @@ public class Customer {
     @Column(name = "age")
     private int age;
 
-    // @JsonIgnoreProperties("customers")
-    // @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-    // private List<Booking> bookings;
+     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+     private List<Booking> bookings;
 
     public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
-       // bookings = new ArrayList<>();
+        bookings = new ArrayList<>();
     }
 
     public Customer() {
@@ -69,11 +68,11 @@ public class Customer {
         this.age = age;
     }
 
-//    public List<Booking> getBookings() {
-//        return bookings;
-//    }
-//
-//    public void setBookings(List<Booking> bookings) {
-//        this.bookings = bookings;
-//    }
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }
